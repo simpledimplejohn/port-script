@@ -6,7 +6,9 @@ This is a script for triggering an api endpoint periodically to generate synthet
 - Axios
 
 ## To Run
-- Navigate to the root folder
+Running this will send a new random word to the endpoint every 5 seconds
+- Start the local server PORT-BACK-END on port 3000
+- Navigate to the root folder of this directory
 - Run the following command:
     `node request_script.js`
 - To Stop
