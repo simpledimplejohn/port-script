@@ -7,7 +7,7 @@ const letterFromNumber = (number) => {
     letter = String.fromCharCode(number)
     return letter
 }
-const randomLetter = () => {
+const randomLetter = () => { // letters are 1 - 24
     let number = Math.floor(Math.random() * (90 - 65) + 65)
     return letterFromNumber(number)
 }
@@ -30,7 +30,7 @@ const makeWord = () => {
 const sendPostRequest = async () => {
     let word = makeWord()
 
-    const url = 'http://localhost:3000/log'
+    const url = 'http://192.168.0.105:3000/log' // pi server ip
     const data = {
         "word" : `${word}`
     }

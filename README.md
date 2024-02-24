@@ -14,6 +14,12 @@ Running this will send a new random word to the endpoint every 5 seconds
 - To Stop
     Command C
 
+## Make an external call to an ip address
+- Currently getting
+    `Error: connect ECONNREFUSED 192.168.0.105:3000`
+    possible firewall issue?
+
 ## Setup
 - `npm init -y` (added the data from this readme to the package.json file)
 - `npm install axios`
+
