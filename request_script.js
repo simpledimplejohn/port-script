@@ -13,7 +13,7 @@ const sendPostRequest = async () => {
 
     try {
         const response = await axios.post(url, data, { headers });
-        console.log(`Status Code: ${response.status}, Response: ${reqponse.data}`);
+        console.log(`Status Code: ${response.status}, Response: ${response.data}`);
     } catch (error) {
         console.error(`Error: ${error.message}`)
     }
