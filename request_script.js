@@ -1,11 +1,38 @@
 // This script sends a request repeatedly to an endpoint
-
 const axios = require('axios');
 
+// Functions to generate a random word part 1
+// this takes a number and returns a letter
+const letterFromNumber = (number) => {
+    letter = String.fromCharCode(number)
+    return letter
+}
+const randomLetter = () => {
+    let number = Math.floor(Math.random() * (90 - 65) + 65)
+    return letterFromNumber(number)
+}
+
+const getRandom = (min, max) => {
+    return Math.floor(Math.random() * (max - min) + min);
+}
+// Lets make a word
+const makeWord = () => {
+    // random number between 3 and 9
+    let word = ""
+    let wordLength = getRandom(3,15)
+    for(let i = 0; i <= wordLength; i ++) {
+        // now assign a letter for each of these
+        word = word + randomLetter()
+    }
+    return word    
+}
+
 const sendPostRequest = async () => {
+    let word = makeWord()
+
     const url = 'http://localhost:3000/log'
     const data = {
-        "word" : "bojato"
+        "word" : `${word}`
     }
     const headers = {
         'Content-Type': 'application/json'
@@ -19,6 +46,6 @@ const sendPostRequest = async () => {
     }
 }
 
-// now run this ever 30 seconds
+// now run this ever 5 seconds
 
 setInterval(sendPostRequest, 5000);
