@@ -30,7 +30,7 @@ const makeWord = () => {
 const sendPostRequest = async () => {
     let word = makeWord()
 
-    let append = ", server : port-script-local"
+    let append = ", server : port-script-ec2"
     word = ": " + word + append;
 
     const url = 'http://34.227.225.227:3000/log' // pi server ip
